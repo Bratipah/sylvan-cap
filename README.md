@@ -170,13 +170,16 @@ This ensures investors receive returns regardless of individual tree outcomes.
 ### Phase 1: Foundation (Q1-Q2 2024)
 - [x] Website and platform development
 - [x] ONINO integration setup
+- [ ] Smart contract development and audit.
 - [ ] Legal framework establishment
-- [ ] First forest acquisition (Kenya)
+- [ ] Seed round NFT/TST sale.
 
 ### Phase 2: Launch (Q3-Q4 2024)
 - [ ] Beta platform launch
 - [ ] First Tree NFT collection mint
+- [ ] Mint Genesis Forest NFT and first 10,000 Tree NFTs.
 - [ ] Community building and partnerships
+- [ ] Establish initial liquidity pools.
 - [ ] Regulatory approvals
 
 ### Phase 3: Expansion (2025)
