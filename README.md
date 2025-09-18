@@ -1,10 +1,11 @@
 # SylvanCap
 
-![SylvanCap Logo](https://placeholder.svg?height=120&width=400&text=SylvanCap)
-
 ## Overview
 
-SylvanCap is a revolutionary Web3 platform that bridges sustainable forestry and decentralized finance (DeFi) by tokenizing individual trees as NFTs on the blockchain. Our mission is to democratize access to forestry investments while promoting sustainable forest management across African ecosystems.
+SylvanCap is a revolutionary Web3 platform that bridges sustainable forestry and decentralized finance (DeFi) by tokenizing individual trees as a RWA on the blockchain. We tokenize managed commercial timberland on Ethereum, transforming illiquid forestry assets into dynamic, composable digital assets. We go beyond simple tokenization by creating a dual-token economy that pools risk and reward, ensuring financial returns for investors regardless of the fate of any single tree. This creates a globally accessible, liquid, and transparent market for sustainable forestry, directly aligning economic incentives with ecological health.
+
+Our mission is to democratize access to forestry investments while promoting sustainable forest management across African ecosystems.
+
 
 ## 🌍 The Problem We Solve
 
@@ -14,8 +15,25 @@ Traditional forestry investments require:
 - Complex legal structures and paperwork
 - Limited transparency in forest management
 - Geographic restrictions for investors
+- Inefficient Revenue Models: Projects often rely on a single payout at harvest, making them vulnerable to price fluctuations and environmental disasters, with no mechanism to monetize ecosystem services like carbon sequestration during the growth phase.
 
 ## 💡 Our Solution: Dual-Token Ecosystem
+
+- **Democratization of Capital**: By fractionalizing forests into tradable Tree NFTs, we open investment to a global pool of retail and institutional investors, providing projects with faster, more efficient access to capital.
+
+- **Instant Liquidity Creation**: Our NFT marketplace and fungible TST token create a secondary market for forestry assets, allowing investors to exit or trade positions long before trees mature, transforming a stagnant asset into a dynamic one.
+
+- **Diversified, Resilient Yield**: Timber Share Token (TST): Provides exposure to the traditional timber sale.
+
+- **Carbon Credit Token (CCT)**: Generates immediate, annual revenue from carbon credits, de-risking the long wait for harvest and creating a more stable cash flow.
+
+- **Insurance Backing**: The "Mature or Dead" guarantee protects capital against environmental risks.
+
+- **Radical Transparency and Verification**:
+
+- **Immutable Proof**: Each tree's location, species, and planting date are permanently recorded on-chain.
+
+- **Oracle-Verified Data**: Satellite imagery (e.g., Planet Labs) and IoT sensors provide objective, tamper-proof proof of life, growth, and sustainable management practices for investors and carbon verifiers alike.
 
 ### Tree NFTs (ERC-721)
 - **Ownership**: Each NFT represents ownership of a specific tree or tree batch
@@ -90,9 +108,10 @@ This ensures investors receive returns regardless of individual tree outcomes.
 | Component | Technology | Purpose |
 |-----------|------------|---------|
 | **Tokenization Platform** | ONINO | No-code asset tokenization and management |
-| **Blockchain** | ONINO Layer-1 + Ethereum L2 | High-performance, scalable infrastructure |
-| **Tree NFTs** | ERC-721 | Individual tree ownership |
-| **Revenue Tokens** | ERC-20 (TST) | Shared revenue distribution |
+| **Blockchain** | ONINO Layer-1 | High-performance, scalable infrastructure |
+| **Tree NFTs** | ERC-721 | Represents ownership of a specific, geolocated tract of timberland.|
+| **Forest NFTs** | ERC-6551 | A unique digital twin of a physical tree. Functions as its own wallet, holding TST and CCT.
+| **Revenue Tokens** | ERC-20 (TST) | A fungible token representing a share in the pooled revenue from all timber sales and insurance payouts.|
 | **Oracles** | Chainlink + ONINO | External data verification |
 | **Storage** | IPFS/Arweave | Immutable metadata storage |
 | **Governance** | ONINO DAO Tools | Community decision making |
@@ -106,10 +125,10 @@ This ensures investors receive returns regardless of individual tree outcomes.
 - **Uganda**: Tropical hardwood reforestation projects
 
 ### Local Impact
-- Job creation in rural communities
-- Sustainable forest management practices
-- Carbon credit generation
-- Biodiversity conservation
+- Job creation in rural communities - Partner forestry operations require local labor for planting, maintenance, and protection, creating stable employment.
+- Sustainable forest management practices - DAO governance and on-chain verification incentivize and enforce ecological best practices, combating deforestation.
+- Carbon credit generation - Projects contribute directly to global carbon drawdown efforts, financed by the voluntary carbon market.
+- Biodiversity conservation 
 - Economic development through Web3 technology
 
 ## 📊 Investment Metrics
