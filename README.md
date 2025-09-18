@@ -1,4 +1,4 @@
-# SylvanCap - Tree Tokenization Platform for African Forestry
+# SylvanCap
 
 ![SylvanCap Logo](https://placeholder.svg?height=120&width=400&text=SylvanCap)
 
