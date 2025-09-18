@@ -103,6 +103,11 @@ This ensures investors receive returns regardless of individual tree outcomes.
 - Independent forestry audits
 - Blockchain oracles for data verification
 
+
+##  Visualizing the Enhanced User Journey
+![Screenshot](images/screenshot.png)
+
+
 ## 🚀 Technology Stack
 
 | Component | Technology | Purpose |
