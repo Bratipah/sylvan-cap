@@ -105,7 +105,7 @@ This ensures investors receive returns regardless of individual tree outcomes.
 
 
 ##  Visualizing the Enhanced User Journey
-![Screenshot](images/screenshot.png)
+![FlowChart](https://github.com/Bratipah/sylvan-cap/blob/main/public/Sylvan%20.png)
 
 
 ## 🚀 Technology Stack
