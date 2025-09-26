@@ -1,11 +1,11 @@
 import { HeroSection } from "@/components/hero-section"
 import { TokenizationProcess } from "@/components/tokenization-process"
-import { InvestmentMetrics } from "@/components/investment-metrics"
 import { TechnologyStack } from "@/components/technology-stack"
 import { ImpactStories } from "@/components/impact-stories"
 import { FAQ } from "@/components/faq"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
+import { DappPanel } from "@/components/dapp-panel"
 
 export default function HomePage() {
   return (
@@ -14,9 +14,9 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <TokenizationProcess />
-        <InvestmentMetrics />
         <TechnologyStack />
         <ImpactStories />
+        <DappPanel />
         <FAQ />
       </main>
       <Footer />

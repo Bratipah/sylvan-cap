@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { Menu, X, Leaf } from "lucide-react"
 
 export function Navigation() {
@@ -29,10 +30,9 @@ export function Navigation() {
             <a href="#faq" className="text-foreground hover:text-primary transition-colors">
               FAQ
             </a>
-            <Button variant="outline" className="mr-2 bg-transparent">
-              Connect Wallet
-            </Button>
-            <Button>Start Investing</Button>
+            <div className="mr-2">
+              <ConnectButton accountStatus={{ smallScreen: "avatar", largeScreen: "full" }} chainStatus="icon" showBalance={false} />
+            </div>
           </div>
 
           <div className="md:hidden">
@@ -58,10 +58,7 @@ export function Navigation() {
                 FAQ
               </a>
               <div className="px-3 py-2 space-y-2">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Connect Wallet
-                </Button>
-                <Button className="w-full">Start Investing</Button>
+                <ConnectButton accountStatus={{ smallScreen: "avatar", largeScreen: "address" }} chainStatus="icon" showBalance={false} />
               </div>
             </div>
           </div>

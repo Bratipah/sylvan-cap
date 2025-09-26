@@ -1,0 +1,10 @@
+[
+  { "inputs": [ { "internalType": "address", "name": "_payoutToken", "type": "address" }, { "internalType": "address", "name": "_tstDistributor", "type": "address" }, { "internalType": "address", "name": "_forestMgmt", "type": "address" }, { "internalType": "address", "name": "_ops", "type": "address" }, { "internalType": "address", "name": "_insurance", "type": "address" }, { "components": [ { "internalType": "uint16", "name": "toTSTHoldersBps", "type": "uint16" }, { "internalType": "uint16", "name": "toForestMgmtBps", "type": "uint16" }, { "internalType": "uint16", "name": "toOpsBps", "type": "uint16" }, { "internalType": "uint16", "name": "toInsuranceBps", "type": "uint16" } ], "internalType": "struct Treasury.Shares", "name": "_shares", "type": "tuple" } ], "stateMutability": "nonpayable", "type": "constructor" },
+  { "inputs": [], "name": "distribute", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
+  { "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" },
+  { "inputs": [], "name": "payoutToken", "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" },
+  { "inputs": [], "name": "tstDistributor", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" },
+  { "inputs": [ { "internalType": "address", "name": "_d", "type": "address" } ], "name": "setTstDistributor", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
+  { "inputs": [], "name": "shares", "outputs": [ { "internalType": "uint16", "name": "toTSTHoldersBps", "type": "uint16" }, { "internalType": "uint16", "name": "toForestMgmtBps", "type": "uint16" }, { "internalType": "uint16", "name": "toOpsBps", "type": "uint16" }, { "internalType": "uint16", "name": "toInsuranceBps", "type": "uint16" } ], "stateMutability": "view", "type": "function" }
+]
+

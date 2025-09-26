@@ -1,0 +1,12 @@
+{
+  "network": "onino-testnet",
+  "chainId": "211223",
+  "deployer": "0x842d803eB7d05D6Aa2DdB8c3Eb912e6d97ce31C4",
+  "contracts": {
+    "MockUSDC": "0xF45aa7AE79a8E8C86728B4fe4aC945F388699Ade",
+    "TreeNFT": "0xfF6C1d445D8bB1d5dbbdCb05D6C5AFCEF5371423",
+    "TSTToken": "0x681D672c55886fA32effbc8C6eC185e6E89C45d7",
+    "Treasury": "0xF1C5d2Ef209149992A7604f7Cf9E60BAE971B378"
+  },
+  "timestamp": "2025-09-26T18:50:00.244Z"
+}
