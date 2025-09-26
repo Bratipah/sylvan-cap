@@ -280,9 +280,6 @@ Tree tokenization involves risks including but not limited to environmental fact
 
 ---
 
-**Built with 🌳 for a sustainable future**
-
-*Powered by ONINO Tokenization Platform*
 
 ## Latest Updates (2025-09)
 
@@ -306,7 +303,7 @@ Tree tokenization involves risks including but not limited to environmental fact
   - TreeNFT: `0xfF6C1d445D8bB1d5dbbdCb05D6C5AFCEF5371423`
   - TSTToken: `0x681D672c55886fA32effbc8C6eC185e6E89C45d7`
   - Treasury: `0xF1C5d2Ef209149992A7604f7Cf9E60BAE971B378`
-- Deployed addresses are saved to `deployed/onino-testnet.json`.
+- Deployed addresses are saved to `deployed/onino-testnet.json` [0x842d803eB7d05D6Aa2DdB8c3Eb912e6d97ce31C4](https://testnet.explorer.onino.io/address/0x842d803eB7d05D6Aa2DdB8c3Eb912e6d97ce31C4?tab=index).
 
 ### Environment Setup
 
