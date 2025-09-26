@@ -344,3 +344,7 @@ DEPLOYER_PRIVATE_KEY=0x<funded_testnet_private_key>
 - `TSTToken` is owner-mint only by design. Use the faucet (dev) to obtain test tokens.
 - `MockUSDC` is for testnet only. Replace with the real payout token when ready.
 - Hardhat currently warns on Node.js v18. Prefer Node.js v20 LTS for best compatibility.
+
+Built with 🌳 for a sustainable future
+
+Powered by ONINO Tokenization Platform
