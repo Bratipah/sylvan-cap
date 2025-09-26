@@ -1,13 +1,9 @@
 "use client"
 
 import React from "react"
-import {
-  getDefaultConfig,
-  RainbowKitProvider,
-} from "@rainbow-me/rainbowkit"
+import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit"
 import "@rainbow-me/rainbowkit/styles.css"
 import { WagmiProvider } from "wagmi"
-import { mainnet, polygon, arbitrum, base, optimism } from "wagmi/chains"
 import type { Chain } from "viem/chains"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
@@ -15,34 +11,31 @@ const oninoChain = (() => {
   const idRaw = process.env.NEXT_PUBLIC_ONINO_CHAIN_ID
   const rpcUrl = process.env.NEXT_PUBLIC_ONINO_RPC_URL
 
-  if (!idRaw || !rpcUrl) return undefined
-
-  const id = Number(idRaw)
-  if (!Number.isFinite(id) || id <= 0) return undefined
-
-  const name = process.env.NEXT_PUBLIC_ONINO_NAME || "ONINO"
+  // Fallback to known ONINO testnet params if env vars are missing
+  const id = Number(idRaw ?? 211223)
+  const resolvedRpc = rpcUrl ?? "https://rpctestnet.onino.io/"
+  const name = process.env.NEXT_PUBLIC_ONINO_NAME || "ONINO Testnet"
   const symbol = process.env.NEXT_PUBLIC_ONINO_SYMBOL || "ONI"
-  const explorer = process.env.NEXT_PUBLIC_ONINO_EXPLORER
-  const isTestnet = (process.env.NEXT_PUBLIC_ONINO_TESTNET || "false").toLowerCase() === "true"
+  const explorer = process.env.NEXT_PUBLIC_ONINO_EXPLORER || "https://testnet.explorer.onino.io/"
+  const isTestnet = true
 
   const chain: Chain = {
     id,
     name,
     nativeCurrency: { name: symbol, symbol, decimals: 18 },
     rpcUrls: {
-      default: { http: [rpcUrl] },
-      public: { http: [rpcUrl] },
+      default: { http: [resolvedRpc] },
+      public: { http: [resolvedRpc] },
     },
-    blockExplorers: explorer
-      ? { default: { name: "Explorer", url: explorer } }
-      : undefined,
+    blockExplorers: { default: { name: "Explorer", url: explorer } },
     testnet: isTestnet,
   }
 
   return chain
 })()
 
-const chains = [mainnet, polygon, arbitrum, base, optimism, ...(oninoChain ? [oninoChain] : [])]
+// Enforce ONINO-only: expose only the ONINO chain
+const chains = oninoChain ? [oninoChain] : []
 
 const wagmiConfig = getDefaultConfig({
   appName: "SylvanCap",
@@ -57,7 +50,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>{children}</RainbowKitProvider>
+        <RainbowKitProvider initialChain={oninoChain?.id}>{children}</RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   )
