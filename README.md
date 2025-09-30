@@ -288,6 +288,6 @@ Find the updates of each week of Onino that gave us the time and mentorship to m
 [Weekly Progress & Updates](https://github.com/Bratipah/sylvan-cap/blob/main/UPDATES.md)
 
 
-Built with 🌳 for a sustainable future
+## Built with 🌳 for a sustainable future
 
-Powered by ONINO Tokenization Platform
+### Powered by ONINO Tokenization Platform
