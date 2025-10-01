@@ -2,9 +2,30 @@
 
 ## Week 1 
 
+#### Checklist
+- [x] Set up Onino Testwallet
+- [x] Complete Dev Profile form
+- [x] Deploy Contract to Onino Testnet
+- [x] Test contract interaction via rest api
+- [x] Deploy your app's plan & Diagram
+
+### Progress & Updates
+- Metamask came in handy in setting up onino network through the custom network
+     - As the chain grows I hope Onino will be added on chainlist.org to ease adding the network to most wallets
+     - Find the connected metamask wallet with some Onino testnet tONI tokens from the Onino testnet 
+
+
+
 ## Week 2
 
-### Frontend
+#### Checklist
+- [x] Provide Project plan to Onino
+- [x] Attend Sub-Chain AMA
+- [x] Provide progress report on github repo or screenshots or witten
+
+### Progress & Updates
+
+#### Frontend
 - Wallet connection added using Wagmi + RainbowKit (Connect button in navbar).
 - Removed demo "Investment Metrics" section.
 - New `DappPanel` on the homepage with:
@@ -13,11 +34,11 @@
   - Test Treasury distribution workflow (uses MockUSDC on testnet).
   - Dev Faucet: mint 10 `TST` to the connected wallet (server-side, owner-only).
 
-### Smart Contracts (Solidity)
+#### Smart Contracts (Solidity)
 - `TreeNFT` (ERC-721), `TSTToken` (ERC-20, owner-mint), `Treasury` (payout shares), plus `MockUSDCToken` for testnet.
 - Hardhat toolchain with deploy and utility scripts.
 
-### ONINO Testnet Deployment
+#### ONINO Testnet Deployment
 - Chain: 211223 | RPC: `https://rpctestnet.onino.io/` | Explorer: `https://testnet.explorer.onino.io/`
 - Addresses:
   - MockUSDC: `0xF45aa7AE79a8E8C86728B4fe4aC945F388699Ade`
@@ -26,7 +47,7 @@
   - Treasury: `0xF1C5d2Ef209149992A7604f7Cf9E60BAE971B378`
 - Deployed addresses are saved to `deployed/onino-testnet.json` [0x842d803eB7d05D6Aa2DdB8c3Eb912e6d97ce31C4](https://testnet.explorer.onino.io/address/0x842d803eB7d05D6Aa2DdB8c3Eb912e6d97ce31C4?tab=index).
 
-### Environment Setup
+#### Environment Setup
 
 Create `.env.local` (frontend):
 
@@ -48,17 +69,38 @@ ONINO_CHAIN_ID=211223
 DEPLOYER_PRIVATE_KEY=0x<funded_testnet_private_key>
 ```
 
-### Commands
+#### Commands
 - Dev server: `npm run dev`
 - Compile contracts: `npm run compile:contracts`
 - Deploy to ONINO: `npm run deploy:onino`
 - Check deployer balance: `npm run check:balance`
 - Seed Treasury and distribute (testnet): `npm run seed:treasury`
 
-### API
+#### API
 - `POST /api/faucet` body `{ address, amount? }` — mints test `TST` to `address` from owner. Requires `ONINO_RPC_URL` and `DEPLOYER_PRIVATE_KEY` in server env.
 
-### Notes
+#### Notes
 - `TSTToken` is owner-mint only by design. Use the faucet (dev) to obtain test tokens.
 - `MockUSDC` is for testnet only. Replace with the real payout token when ready.
 - Hardhat currently warns on Node.js v18. Prefer Node.js v20 LTS for best compatibility.
+
+  
+
+## Week 3
+
+#### Checklist
+- [x] Finish prototype for Demo Day
+- [x] Upload project to Github with basic README
+- [x] Check-In submit Github repo + demo
+
+### Progress & Updates
+
+#### Prototype
+- I was able to finish up both on frontend and backend and smart contracts deployed to Onino with the deployed link functioning properly
+     - At first we had issues with our reown kit being able to detect Onino testnet network on connecting wallet but all was handled and it works perfectly
+     - We had to abstract or find alternatives to some of the advanced strategies in smart contracts to be able to make it an MVP
+
+#### Project Upload
+- The project has been uploaded to github succesfully with all the plans both technically and problem solution wise with a clear GTM strategy waiting to be actualized in the market with the waitlist
+- find the project on our repo
+- Find the Demo of our project in our links in the readme.md
