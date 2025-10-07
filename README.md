@@ -111,6 +111,30 @@ This ensures investors receive returns regardless of individual tree outcomes.
 ![Rewards Distribution FlowChart](https://github.com/Bratipah/sylvan-cap/blob/main/public/reward%20distribution.png)
 
 
+## 🧭 dApp User Journey
+
+```mermaid
+journey
+  title SylvanCap dApp User Journey
+  section Landing
+    Open homepage: 5: User
+    View product sections (How it works, Tech, Impact, FAQ): 3: User
+  section Connect Wallet (ONINO-only)
+    Click Connect in navbar: 4: User
+    Approve wallet and/or switch to ONINO Testnet: 3: User
+    Wallet connected (RainbowKit/Wagmi): 5: System
+  section Wallet & Balances
+    Display address and chainId in panel: 4: System
+    Read TST balance via balanceOf: 4: System
+  section On-chain Actions
+    Mint Tree NFT (TreeNFT.mint(address, tokenURI)): 4: User
+    Treasury demo (transfer MockUSDC -> Treasury.distribute): 3: User
+    Dev faucet (POST /api/faucet to mint 10 TST): 2: User
+  section Feedback & Errors
+    Show tx pending/confirmed states and hash: 4: System
+    Handle wrong network / insufficient MockUSDC gracefully: 3: System
+```
+
 ## 🚀 Technology Stack
 
 | Component | Technology | Purpose |
