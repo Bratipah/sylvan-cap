@@ -14,11 +14,11 @@
      - As the chain grows I hope Onino will be added on chainlist.org to ease adding the network to most wallets
      - Find the connected metamask wallet with some Onino testnet tONI tokens from the Onino testnet 
 
- [Onino TestWallet](https://github.com/Bratipah/sylvan-cap/blob/main/public/metamask-wallet.png)
-#### [Terminal Contract Deployment](https://github.com/Bratipah/sylvan-cap/blob/main/public/onino-contract-testnet.png)
-#### [Block Explorer Test Contract Deployment](https://github.com/Bratipah/sylvan-cap/blob/main/public/contract-onino-explorer2.png)
-#### [App's Plan](https://github.com/Bratipah/sylvan-cap/blob/main/public/Sylvan%20.png)
-#### [Apps Monetizing & Reward plan](https://github.com/Bratipah/sylvan-cap/blob/main/public/reward%20distribution.png)
+#### ![Onino TestWallet](https://github.com/Bratipah/sylvan-cap/blob/main/public/metamask-wallet.png)
+#### ![Terminal Contract Deployment](https://github.com/Bratipah/sylvan-cap/blob/main/public/onino-contract-testnet.png)
+#### ![Block Explorer Test Contract Deployment](https://github.com/Bratipah/sylvan-cap/blob/main/public/contract-onino-explorer2.png)
+#### ![App's Plan](https://github.com/Bratipah/sylvan-cap/blob/main/public/Sylvan%20.png)
+#### ![Apps Monetizing & Reward plan](https://github.com/Bratipah/sylvan-cap/blob/main/public/reward%20distribution.png)
 #### 🧭 App User Journey
 
 ```mermaid
@@ -73,14 +73,14 @@ journey
   - Test Treasury distribution workflow (uses MockUSDC on testnet).
   - Dev Faucet: mint 10 `TST` to the connected wallet (server-side, owner-only).
 
-  [Frontend](https://github.com/Bratipah/sylvan-cap/blob/main/public/frontend1.png)
+  #### ![Frontend](https://github.com/Bratipah/sylvan-cap/blob/main/public/frontend1.png)
 
 #### Smart Contracts (Solidity)
 - `TreeNFT` (ERC-721), `TSTToken` (ERC-20, owner-mint), `Treasury` (payout shares), plus `MockUSDCToken` for testnet.
 - Hardhat toolchain with deploy and utility scripts.
 
-[TreeNFT Contract](https://github.com/Bratipah/sylvan-cap/blob/main/public/tree-NFT.png)
-[USDC Stablecoin Contract](https://github.com/Bratipah/sylvan-cap/blob/main/public/USDC%20Stablecoin%20Contract.png) 
+#### ![TreeNFT Contract](https://github.com/Bratipah/sylvan-cap/blob/main/public/tree-NFT.png)
+#### ![USDC Stablecoin Contract](https://github.com/Bratipah/sylvan-cap/blob/main/public/USDC%20Stablecoin%20Contract.png) 
 
 #### ONINO Testnet Deployment
 - Chain: 211223 | RPC: `https://rpctestnet.onino.io/` | Explorer: `https://testnet.explorer.onino.io/`
@@ -91,7 +91,7 @@ journey
   - Treasury: `0xF1C5d2Ef209149992A7604f7Cf9E60BAE971B378`
 - Deployed addresses are saved to `deployed/onino-testnet.json` [0x842d803eB7d05D6Aa2DdB8c3Eb912e6d97ce31C4](https://testnet.explorer.onino.io/address/0x842d803eB7d05D6Aa2DdB8c3Eb912e6d97ce31C4?tab=index).
 
-[Sylvan Contract Deployed](https://github.com/Bratipah/sylvan-cap/blob/main/public/ContractDeployment.png)
+#### ![Sylvan Contract Deployed](https://github.com/Bratipah/sylvan-cap/blob/main/public/ContractDeployment.png)
 
 #### Environment Setup
 
@@ -146,7 +146,7 @@ DEPLOYER_PRIVATE_KEY=0x<funded_testnet_private_key>
      - At first we had issues with our reown kit being able to detect Onino testnet network on connecting wallet but all was handled and it works perfectly
      - We had to abstract or find alternatives to some of the advanced strategies in smart contracts to be able to make it an MVP
 
-[MVP Prototype](https://github.com/Bratipah/sylvan-cap/blob/main/public/frontend1.png)
+#### ![MVP Prototype](https://github.com/Bratipah/sylvan-cap/blob/main/public/frontend1.png)
 
 #### Project Upload
 - The project has been uploaded to github succesfully with all the plans both technically and problem solution wise with a clear GTM strategy waiting to be actualized in the market with the waitlist
