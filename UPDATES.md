@@ -12,7 +12,8 @@
 ### Progress & Updates
 - Metamask came in handy in setting up onino network through the custom network
      - As the chain grows I hope Onino will be added on chainlist.org to ease adding the network to most wallets
-     - Find the connected metamask wallet with some Onino testnet tONI tokens from the Onino testnet 
+     - Find the connected metamask wallet with some Onino testnet tONI tokens from the Onino testnet
+     - Deployed our first contract to Onino Testnet on this [contact address](https://testnet.explorer.onino.io/address/0xc2dFD5Cb92decB685787cEDC536046CBC251fe2A)
 
 #### ![Onino TestWallet](https://github.com/Bratipah/sylvan-cap/blob/main/public/metamask-wallet.png)
 #### ![Terminal Contract Deployment](https://github.com/Bratipah/sylvan-cap/blob/main/public/onino-contract-testnet.png)
