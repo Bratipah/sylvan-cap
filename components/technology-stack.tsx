@@ -7,8 +7,8 @@ export function TechnologyStack() {
     {
       icon: Zap,
       title: "Ethereum L2",
-      description: "Built on Arbitrum for low-cost, fast transactions",
-      badges: ["Arbitrum", "ERC-721", "ERC-20"],
+      description: "Built on Onino for RWA architecture, low-cost, fast transactions",
+      badges: ["Onino", "ERC-721", "ERC-20"],
     },
     {
       icon: Shield,
