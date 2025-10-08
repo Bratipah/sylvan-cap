@@ -20,7 +20,7 @@ export function FAQ() {
     {
       question: "What blockchain technology do you use?",
       answer:
-        "We built on Ethereum Layer 2 (Arbitrum) for low transaction costs. We use Chainlink oracles for reliable external data, IPFS/Arweave for metadata storage, and OpenZeppelin smart contracts for security and upgradeability.",
+        "We built on Onino RWA blockchain for low transaction costs and impressive architecture. We use Chainlink oracles for reliable external data, IPFS/Arweave for metadata storage, and OpenZeppelin smart contracts for security and upgradeability.",
     },
     {
       question: "How do you verify tree health and growth?",
