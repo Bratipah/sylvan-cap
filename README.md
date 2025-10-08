@@ -119,7 +119,7 @@ journey
   section Landing
     Open homepage: 5: User
     View product sections (How it works, Tech, Impact, FAQ): 3: User
-  section Connect Wallet (ONINO-only)
+  section Connect Wallet - ONINO only
     Click Connect in navbar: 4: User
     Approve wallet and/or switch to ONINO Testnet: 3: User
     Wallet connected (RainbowKit/Wagmi): 5: System
@@ -127,16 +127,17 @@ journey
     Display address and chainId in panel: 4: System
     Read TST balance via balanceOf: 4: System
   section On-chain Actions
-    Mint Tree NFT (TreeNFT.mint(address, tokenURI)): 4: User
-    Treasury demo (transfer MockUSDC -> Treasury.distribute): 3: User
-    Dev faucet (POST /api/faucet to mint 10 TST): 2: User
-  section Harvest, Burn, Revenue & Replanting
-    Harvest event confirmed (ops/oracle): 3: System
+    Mint Tree NFT: 4: User
+    Treasury demo distribution: 3: User
+    Dev faucet request: 2: User
+  section Harvest, Burn, Revenue and Replanting
+    Harvest event confirmed: 3: System
     Burn Tree NFT to retire harvested tree: 4: System
-    Record timber sale revenue on-chain: 4: System
-    Distribute proceeds to TST holders (Treasury.distribute): 4: System
+    Record timber sale revenue on chain: 4: System
+    Distribute proceeds to TST holders: 4: System
     Payout tree owner revenue share: 4: System
-    Allocate replanting fund; mint replacement Tree NFT(s): 3: System
+    Allocate replanting fund: 3: System
+    Mint replacement Tree NFTs: 3: System
     User monitors new cohort growth and portfolio: 3: User
   section Feedback & Errors
     Show tx pending/confirmed states and hash: 4: System
