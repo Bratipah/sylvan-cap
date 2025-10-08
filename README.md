@@ -7,6 +7,13 @@ SylvanCap is a revolutionary Web3 platform that bridges sustainable forestry and
 Our mission is to democratize access to forestry investments while promoting sustainable forest management across African ecosystems.
 
 
+## Cohort Genesis 
+
+Find the updates of each week of Onino that gave us the time and mentorship to move this idea to a prototype and launch it our users with their RWA tokenization infrastructure
+
+[Weekly Progress & Updates](https://github.com/Bratipah/sylvan-cap/blob/main/UPDATES.md)
+
+
 ## 🌍 The Problem We Solve
 
 Traditional forestry investments require:
@@ -313,12 +320,6 @@ Tree tokenization involves risks including but not limited to environmental fact
 
 ---
 
-
-## Cohort Genesis 
-
-Find the updates of each week of Onino that gave us the time and mentorship to move this idea to a prototype and launch it our users with their RWA tokenization infrastructure
-
-[Weekly Progress & Updates](https://github.com/Bratipah/sylvan-cap/blob/main/UPDATES.md)
 
 
 ## Built with 🌳 for a sustainable future
