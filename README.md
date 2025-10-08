@@ -130,6 +130,14 @@ journey
     Mint Tree NFT (TreeNFT.mint(address, tokenURI)): 4: User
     Treasury demo (transfer MockUSDC -> Treasury.distribute): 3: User
     Dev faucet (POST /api/faucet to mint 10 TST): 2: User
+  section Harvest, Burn, Revenue & Replanting
+    Harvest event confirmed (ops/oracle): 3: System
+    Burn Tree NFT to retire harvested tree: 4: System
+    Record timber sale revenue on-chain: 4: System
+    Distribute proceeds to TST holders (Treasury.distribute): 4: System
+    Payout tree owner revenue share: 4: System
+    Allocate replanting fund; mint replacement Tree NFT(s): 3: System
+    User monitors new cohort growth and portfolio: 3: User
   section Feedback & Errors
     Show tx pending/confirmed states and hash: 4: System
     Handle wrong network / insufficient MockUSDC gracefully: 3: System
