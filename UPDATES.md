@@ -155,6 +155,6 @@ DEPLOYER_PRIVATE_KEY=0x<funded_testnet_private_key>
 - Find the Demo of our project in our links in the readme.md
 
 
-[![Sylvan Cap Demo](https://github.com/Bratipah/sylvan-cap/blob/main/public/frontend1.png)](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?t=2&sid=58064d8a-3ab2-486a-83eb-01a71341c981)
+[![Sylvan Cap Demo](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?t=2&sid=58064d8a-3ab2-486a-83eb-01a71341c981)]
 ![](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=fd7292c7-feb1-409a-a841-473595958670)]
 ![Demo Continuation](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=fd7292c7-feb1-409a-a841-473595958670)]
