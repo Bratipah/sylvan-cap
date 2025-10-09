@@ -155,5 +155,7 @@ DEPLOYER_PRIVATE_KEY=0x<funded_testnet_private_key>
 - Find the Demo of our project in our links in the readme.md
 
 
-[![SylvanCap Demo](https://cdn.loom.com/sessions/thumbnails/e57eb39b637c4f4b952024fdce9a65de-with-play.gif)](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?t=2&sid=95067b19-cce7-4366-a4dc-c7f936980ae8)
+## Demo Video
+
+[![Loom Demo](https://cdn.loom.com/sessions/thumbnails/e57eb39b637c4f4b952024fdce9a65de-with-play.gif)](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?t=2&sid=95067b19-cce7-4366-a4dc-c7f936980ae8)
 
