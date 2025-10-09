@@ -2,7 +2,7 @@
 
 ## Overview
 
-SylvanCap is a revolutionary Web3 platform that bridges sustainable forestry and decentralized finance (DeFi) by tokenizing individual trees as a RWA on the blockchain. We tokenize managed commercial timberland on Ethereum, transforming illiquid forestry assets into dynamic, composable digital assets. We go beyond simple tokenization by creating a dual-token economy that pools risk and reward, ensuring financial returns for investors regardless of the fate of any single tree. This creates a globally accessible, liquid, and transparent market for sustainable forestry, directly aligning economic incentives with ecological health.
+SylvanCap is a revolutionary Web3 platform that bridges sustainable forestry and decentralized finance (DeFi) by tokenizing individual trees as a RWA on the blockchain. We tokenize managed commercial timberland on Onino, transforming illiquid forestry assets into dynamic, composable digital assets. We go beyond simple tokenization by creating a dual-token economy that pools risk and reward, ensuring financial returns for investors regardless of the fate of any single tree. This creates a globally accessible, liquid, and transparent market for sustainable forestry, directly aligning economic incentives with ecological health.
 
 Our mission is to democratize access to forestry investments while promoting sustainable forest management across African ecosystems.
 
