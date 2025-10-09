@@ -157,7 +157,6 @@ DEPLOYER_PRIVATE_KEY=0x<funded_testnet_private_key>
 
 ## Demo Video
 
-```
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/e57eb39b637c4f4b952024fdce9a65de?sid=5b8d3a7b-ed83-4b71-a092-2a8893dc0742" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-```
+[Sylvan Demo](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=ed1b8e16-b649-4e4e-9c85-0a7d15343c56)
+[Demo Continuation](https://www.loom.com/share/3fa5b3790f1f40adac9238b7dfeb7e14?sid=86fd82fa-1bd6-4f29-8010-38f557609ee8)
 
