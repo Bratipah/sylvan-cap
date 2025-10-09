@@ -154,5 +154,6 @@ DEPLOYER_PRIVATE_KEY=0x<funded_testnet_private_key>
 - find the project on our repo
 - Find the Demo of our project in our links in the readme.md
 
-![Demo](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=fd7292c7-feb1-409a-a841-473595958670)
-![Demo Continuation](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=fd7292c7-feb1-409a-a841-473595958670)
+
+[![Demo](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=fd7292c7-feb1-409a-a841-473595958670)
+[![Demo Continuation](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=fd7292c7-feb1-409a-a841-473595958670)
