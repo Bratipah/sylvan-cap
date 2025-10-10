@@ -159,6 +159,6 @@ DEPLOYER_PRIVATE_KEY=0x<funded_testnet_private_key>
 
 ## Demo Video
 
-[Sylvan Demo](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=ed1b8e16-b649-4e4e-9c85-0a7d15343c56)
-[Demo Continuation](https://www.loom.com/share/3fa5b3790f1f40adac9238b7dfeb7e14?sid=86fd82fa-1bd6-4f29-8010-38f557609ee8)
+- [Sylvan Demo](https://www.loom.com/share/e57eb39b637c4f4b952024fdce9a65de?sid=ed1b8e16-b649-4e4e-9c85-0a7d15343c56)
+- [Sylvan Onino Demo2 Continuation](https://www.loom.com/share/3fa5b3790f1f40adac9238b7dfeb7e14?sid=86fd82fa-1bd6-4f29-8010-38f557609ee8)
 
