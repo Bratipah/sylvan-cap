@@ -74,6 +74,8 @@ journey
   - Test Treasury distribution workflow (uses MockUSDC on testnet).
   - Dev Faucet: mint 10 `TST` to the connected wallet (server-side, owner-only).
 
+  ### [Frontend Live Link](https://sylvan-cap.vercel.app/)
+
   #### ![Frontend](https://github.com/Bratipah/sylvan-cap/blob/main/public/frontend1.png)
 
 #### Smart Contracts (Solidity)
