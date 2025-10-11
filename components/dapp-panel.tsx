@@ -6,11 +6,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
 import { ABIS, CONTRACTS, ONINO_TESTNET_CHAIN_ID } from "@/lib/contracts"
+import { formatUnits, parseUnits } from "ethers"
 
 export function DappPanel() {
   const { address, isConnected, chainId } = useAccount()
   const [mintUri, setMintUri] = useState("ipfs://tree-metadata-placeholder")
   const [distAmount, setDistAmount] = useState("1000000") // 1 USDC (6 decimals)
+  const [errorMsg, setErrorMsg] = useState<string>("")
+  const [infoMsg, setInfoMsg] = useState<string>("")
 
   const { data: tstBalance } = useReadContract({
     address: CONTRACTS.TSTToken as `0x${string}`,
@@ -35,7 +38,9 @@ export function DappPanel() {
             <div>Connected: {isConnected ? "Yes" : "No"}</div>
             <div>Address: {address || "-"}</div>
             <div>Chain ID: {chainId || "-"}</div>
-            <div>TST Balance: {tstBalance !== undefined ? String(tstBalance) : "-"}</div>
+            <div>
+              TST Balance: {tstBalance !== undefined ? formatUnits(BigInt(tstBalance as any), 18) : "-"}
+            </div>
           </CardContent>
         </Card>
 
@@ -49,17 +54,23 @@ export function DappPanel() {
               disabled={!isConnected || isPending || isConfirming}
               onClick={() => {
                 if (!address) return
-                writeContract({
-                  address: CONTRACTS.TreeNFT as `0x${string}`,
-                  abi: ABIS.TreeNFT,
-                  functionName: "mint",
-                  args: [address, mintUri],
-                })
+                setErrorMsg("")
+                try {
+                  writeContract({
+                    address: CONTRACTS.TreeNFT as `0x${string}`,
+                    abi: ABIS.TreeNFT,
+                    functionName: "mint",
+                    args: [address, mintUri],
+                  })
+                } catch (e: any) {
+                  setErrorMsg(e?.message || "Mint failed")
+                }
               }}
             >
               {isPending || isConfirming ? "Minting..." : "Mint Tree NFT"}
             </Button>
             {hash && <div className="text-xs break-all">tx: {hash}</div>}
+            {errorMsg && <div className="text-xs text-red-500 break-all">{errorMsg}</div>}
           </CardContent>
         </Card>
 
@@ -83,6 +94,7 @@ export function DappPanel() {
                   // As a demo, we skip mint from UI; assume user holds MockUSDC or we transfer via script.
                   // 2) Transfer MockUSDC from user to Treasury requires approve + transferFrom, but Treasury pulls balance, so we'll send directly to Treasury.
                   // Simpler demo: user transfers MockUSDC to Treasury and then calls distribute() (requires user to have balance)
+                  setErrorMsg("")
                   try {
                     await writeContract({
                       address: CONTRACTS.MockUSDC as `0x${string}`,
@@ -93,19 +105,27 @@ export function DappPanel() {
                       functionName: "transfer",
                       args: [CONTRACTS.Treasury, amount],
                     })
-                  } catch (e) {}
-                  // 3) Call distribute
-                  writeContract({
-                    address: CONTRACTS.Treasury as `0x${string}`,
-                    abi: ABIS.Treasury,
-                    functionName: "distribute",
-                  })
+                  } catch (e: any) {
+                    setErrorMsg(e?.message || "USDC transfer failed")
+                    return
+                  }
+                  try {
+                    await writeContract({
+                      address: CONTRACTS.Treasury as `0x${string}`,
+                      abi: ABIS.Treasury,
+                      functionName: "distribute",
+                    })
+                  } catch (e: any) {
+                    setErrorMsg(e?.message || "Distribution failed")
+                  }
                 }}
               >
                 {isPending || isConfirming ? "Processing..." : "Send & Distribute"}
               </Button>
             </div>
             {hash && <div className="text-xs break-all">tx: {hash}</div>}
+            {infoMsg && <div className="text-xs text-green-600 break-all">{infoMsg}</div>}
+            {errorMsg && <div className="text-xs text-red-500 break-all">{errorMsg}</div>}
           </CardContent>
         </Card>
 
@@ -114,22 +134,47 @@ export function DappPanel() {
             <CardTitle>TST Faucet (Dev)</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="text-sm text-muted-foreground">Mints 10 TST to the connected wallet from the deployer (owner).</div>
+            <div className="text-sm text-muted-foreground">Mints 10 TST to the connected wallet (client-side demo).</div>
             <Button
               disabled={!isConnected || isPending || isConfirming}
               onClick={async () => {
                 if (!address) return
-                const res = await fetch("/api/faucet", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ address }),
-                })
-                const j = await res.json().catch(() => ({}))
-                // No-op; user can watch wallet for tx
-                console.log(j)
+                setErrorMsg("")
+                try {
+                  await writeContract({
+                    address: CONTRACTS.TSTToken as `0x${string}`,
+                    abi: ABIS.TSTToken,
+                    functionName: "mint",
+                    args: [address, parseUnits("10", 18)],
+                  })
+                } catch (e: any) {
+                  setErrorMsg(e?.message || "TST mint failed")
+                }
               }}
             >
               Mint 10 TST to Me
+            </Button>
+            <div className="text-sm text-muted-foreground">Mint MockUSDC (dev) to test Treasury distribution.</div>
+            <Button
+              disabled={!isConnected || isPending || isConfirming}
+              onClick={async () => {
+                if (!address) return
+                setErrorMsg("")
+                try {
+                  const res = await fetch("/api/faucet-usdc", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ address, amount: "100" }),
+                  })
+                  const j = await res.json().catch(() => ({}))
+                  if (!res.ok) throw new Error(j?.error || "USDC faucet failed")
+                  setInfoMsg(`USDC faucet tx: ${j?.hash || "sent"}`)
+                } catch (e: any) {
+                  setErrorMsg(e?.message || "USDC faucet failed")
+                }
+              }}
+            >
+              Mint 100 MockUSDC to Me
             </Button>
           </CardContent>
         </Card>

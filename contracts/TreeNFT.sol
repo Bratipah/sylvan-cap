@@ -9,7 +9,7 @@ contract TreeNFT is ERC721URIStorage, Ownable {
 
     constructor() ERC721("SylvanCap Tree", "TREE") Ownable(msg.sender) {}
 
-    function mint(address to, string memory tokenUri) external onlyOwner returns (uint256 tokenId) {
+    function mint(address to, string memory tokenUri) external returns (uint256 tokenId) {
         tokenId = ++nextTokenId;
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, tokenUri);

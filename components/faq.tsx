@@ -20,7 +20,7 @@ export function FAQ() {
     {
       question: "What blockchain technology do you use?",
       answer:
-        "We built on Onino RWA blockchain for low transaction costs and impressive architecture. We use Chainlink oracles for reliable external data, IPFS/Arweave for metadata storage, and OpenZeppelin smart contracts for security and upgradeability.",
+        "We build on ONINO Layer-1 for high performance and tokenization platform integration. We use Chainlink and ONINO oracles, IPFS/Arweave for metadata storage, and OpenZeppelin smart contracts for security and upgradeability.",
     },
     {
       question: "How do you verify tree health and growth?",
