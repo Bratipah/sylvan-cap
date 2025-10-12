@@ -11,7 +11,7 @@ import { formatUnits, parseUnits } from "ethers"
 export function DappPanel() {
   const { address, isConnected, chainId } = useAccount()
   const [mintUri, setMintUri] = useState("ipfs://tree-metadata-placeholder")
-  const [distAmount, setDistAmount] = useState("1000000") // 1 USDC (6 decimals)
+  const [distAmount, setDistAmount] = useState("")
   const [errorMsg, setErrorMsg] = useState<string>("")
   const [infoMsg, setInfoMsg] = useState<string>("")
 
@@ -84,11 +84,15 @@ export function DappPanel() {
               distribute(). For demonstration only.
             </div>
             <div className="flex gap-2 items-center">
-              <Input value={distAmount} onChange={(e) => setDistAmount(e.target.value)} placeholder="amount (6 decimals)" />
+              <Input value={distAmount} onChange={(e) => setDistAmount(e.target.value)} />
               <Button
                 disabled={!isConnected || isPending || isConfirming}
                 onClick={async () => {
                   if (!address) return
+                  if (!distAmount || distAmount.trim() === "") {
+                    setErrorMsg("Enter USDC amount")
+                    return
+                  }
                   const amount = BigInt(distAmount)
                   // 1) Mint MockUSDC to user (owner-only; on testnet our deployer is owner, so this will likely fail from other EOA)
                   // As a demo, we skip mint from UI; assume user holds MockUSDC or we transfer via script.
@@ -154,28 +158,7 @@ export function DappPanel() {
             >
               Mint 10 TST to Me
             </Button>
-            <div className="text-sm text-muted-foreground">Mint MockUSDC (dev) to test Treasury distribution.</div>
-            <Button
-              disabled={!isConnected || isPending || isConfirming}
-              onClick={async () => {
-                if (!address) return
-                setErrorMsg("")
-                try {
-                  const res = await fetch("/api/faucet-usdc", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ address, amount: "100" }),
-                  })
-                  const j = await res.json().catch(() => ({}))
-                  if (!res.ok) throw new Error(j?.error || "USDC faucet failed")
-                  setInfoMsg(`USDC faucet tx: ${j?.hash || "sent"}`)
-                } catch (e: any) {
-                  setErrorMsg(e?.message || "USDC faucet failed")
-                }
-              }}
-            >
-              Mint 100 MockUSDC to Me
-            </Button>
+            
           </CardContent>
         </Card>
       </div>
