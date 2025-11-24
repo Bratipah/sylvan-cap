@@ -165,6 +165,101 @@ journey
 | **Storage** | IPFS/Arweave | Immutable metadata storage |
 | **Governance** | ONINO DAO Tools | Community decision making |
 
+## 🌿 AntuGrow Monitoring & Alerts
+
+This project integrates AntuGrow for satellite vegetation indices, soil/climate context, AQI, AI image diagnostics, and SMS alerts.
+
+### Environment
+Create `.env` (Prisma) and `.env.local` (runtime). Do not commit secrets.
+
+```bash
+# .env (Prisma reads this)
+DATABASE_URL="file:./dev.db"
+```
+
+```bash
+# .env.local
+ANTUGROW_API_KEY=<your-antugrow-api-key>
+CRON_SECRET=<strong-random-secret>
+# Optional override for absolute URL in SSR fetches
+# NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+Generate a strong secret:
+```bash
+node -e 'console.log(require("crypto").randomBytes(32).toString("base64url"))'
+```
+
+### Data model (Prisma)
+- Models: `Site`, `IndexSnapshot`, `AQISnapshot`, `SoilStat`, `ClimateStat`, `Prediction`, `Alert`
+- Dev DB: SQLite (`dev.db`)
+
+Init locally:
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+### AntuGrow client (server)
+- `lib/antugrow.ts` wraps:
+  - `/v1/all` → NDVI, EVI, GNDVI, NDMI, NDWI, SAVI, NBR
+  - `/v1/aqi`
+  - `/v1/soil-ph`, `/v1/clay`, `/v1/sand`
+  - `/v1/temperature`, `/v1/precipitation`
+  - `/v1/analyze-image`, `/v1/send-sms`
+
+### Monitoring API routes
+- `GET /api/monitor/indices?siteId=...` → fetch latest indices and persist snapshot
+- `GET /api/monitor/soil?siteId=...` → soil stats
+- `GET /api/monitor/climate?siteId=...` → annual climate aggregates
+- `GET /api/monitor/history?siteId=...&days=...` → time-series indices from DB
+- `GET /api/monitor/aqi-history?siteId=...&days=...` → time-series AQI from DB
+- `POST /api/monitor/predict` → 7-day simple forecast (linear trend) for NDVI/EVI/NDMI
+- `POST /api/monitor/alerts` → threshold alerts (optionally sends SMS via AntuGrow)
+- `POST /api/monitor/analyze-image` → proxy to AntuGrow AI image analysis
+
+Example:
+```bash
+curl "http://localhost:3000/api/monitor/indices?siteId=demo-1"
+curl "http://localhost:3000/api/monitor/soil?siteId=demo-1"
+curl "http://localhost:3000/api/monitor/climate?siteId=demo-1"
+curl "http://localhost:3000/api/monitor/history?siteId=demo-1&days=120"
+curl -X POST "http://localhost:3000/api/monitor/predict" -H "Content-Type: application/json" -d '{"siteId":"demo-1","metric":"ndvi","horizonDays":7}'
+```
+
+### Scheduler (Vercel Cron)
+- `vercel.json` includes a daily cron:
+  - `path: /api/cron/fetch-indices?secret=@CRON_SECRET`
+  - `schedule: "0 6 * * *"`
+- Set Vercel Project Environment Variables:
+  - `CRON_SECRET` (same as local), `ANTUGROW_API_KEY`, and optionally `DATABASE_URL`
+- Cron route: `app/api/cron/fetch-indices/route.ts` (checks `CRON_SECRET`)
+
+### Sites configuration
+- `lib/sites.ts` defines monitored sites:
+```ts
+export const SITES = [
+  { id: "demo-1", name: "Demo Site 1 (Nairobi)", lat: -1.286389, lng: 36.817223 },
+  { id: "demo-2", name: "Demo Site 2 (Kisumu)", lat: -0.091702, lng: 34.7680 },
+]
+```
+
+### UI pages
+- Monitor dashboard: `/monitor/[siteId]`
+  - Current NDVI/NDMI/EVI, soil pH/clay/sand, annual climate
+  - Time-series charts (NDVI/NDMI/EVI, AQI)
+- AI Image Analysis: `/monitor/[siteId]/analyze`
+  - Upload image (`photo`) with optional `instructions`
+
+### Development
+```bash
+npm install
+npx prisma generate
+npx prisma db push
+npm run dev
+# open http://localhost:3000/monitor/demo-1
+```
+
 ## 🌍 African Focus
 
 ### Target Regions
