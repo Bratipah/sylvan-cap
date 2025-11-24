@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import { getSite } from "@/lib/sites"
 import { Card } from "@/components/ui/card"
+import MonitorCharts from "./charts"
 
 async function getData(siteId: string) {
   const base = process.env.NEXT_PUBLIC_BASE_URL ?? ""
@@ -66,6 +67,8 @@ export default async function MonitorPage({ params }: { params: { siteId: string
           <div className="text-2xl font-bold">{climate?.climate?.annual_precipitation_mm ?? "—"}</div>
         </Card>
       </div>
+
+      <MonitorCharts siteId={params.siteId} />
     </div>
   )
 }
