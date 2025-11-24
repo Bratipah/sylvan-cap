@@ -30,6 +30,12 @@ export function Navigation() {
             <a href="#faq" className="text-foreground hover:text-primary transition-colors">
               FAQ
             </a>
+            <a href="/monitor/demo-1" className="text-foreground hover:text-primary transition-colors">
+              Monitor
+            </a>
+            <a href="/monitor/demo-1/analyze" className="text-foreground hover:text-primary transition-colors">
+              Analyze Image
+            </a>
             <div className="mr-2">
               <ConnectButton accountStatus={{ smallScreen: "avatar", largeScreen: "full" }} chainStatus="icon" showBalance={false} />
             </div>
@@ -56,6 +62,12 @@ export function Navigation() {
               </a>
               <a href="#faq" className="block px-3 py-2 text-foreground hover:text-primary">
                 FAQ
+              </a>
+              <a href="/monitor/demo-1" className="block px-3 py-2 text-foreground hover:text-primary">
+                Monitor
+              </a>
+              <a href="/monitor/demo-1/analyze" className="block px-3 py-2 text-foreground hover:text-primary">
+                Analyze Image
               </a>
               <div className="px-3 py-2 space-y-2">
                 <ConnectButton accountStatus={{ smallScreen: "avatar", largeScreen: "address" }} chainStatus="icon" showBalance={false} />

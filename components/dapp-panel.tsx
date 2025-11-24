@@ -158,7 +158,21 @@ export function DappPanel() {
             >
               Mint 10 TST to Me
             </Button>
-            
+
+          </CardContent>
+        </Card>
+
+        <Card className="md:col-span-2">
+          <CardHeader>
+            <CardTitle>Monitoring</CardTitle>
+          </CardHeader>
+          <CardContent className="flex items-center gap-3">
+            <Button asChild>
+              <a href="/monitor/demo-1">Open Monitor (demo-1)</a>
+            </Button>
+            <Button variant="secondary" asChild>
+              <a href="/monitor/demo-1/analyze">Analyze Image</a>
+            </Button>
           </CardContent>
         </Card>
       </div>
