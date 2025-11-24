@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Site {
+  id        String  @id
+  name      String
+  lat       Float?
+  lng       Float?
+  bboxJson  String? // JSON-encoded polygon [[lng,lat],...]
+  createdAt DateTime @default(now())
+
+  indexSnapshots IndexSnapshot[]
+  aqiSnapshots   AQISnapshot[]
+  soilStats      SoilStat[]
+  climateStats   ClimateStat[]
+  predictions    Prediction[]
+  alerts         Alert[]
+}
+
+model IndexSnapshot {
+  id        String   @id @default(cuid())
+  siteId    String
+  site      Site     @relation(fields: [siteId], references: [id])
+  timestamp DateTime
+
+  ndvi   Float?
+  evi    Float?
+  gndvi  Float?
+  ndmi   Float?
+  ndwi   Float?
+  savi   Float?
+  nbr    Float?
+
+  createdAt DateTime @default(now())
+
+  @@index([siteId, timestamp], map: "idx_site_time")
+}
+
+model AQISnapshot {
+  id        String   @id @default(cuid())
+  siteId    String
+  site      Site     @relation(fields: [siteId], references: [id])
+  timestamp DateTime
+  aqi       Int
+  createdAt DateTime @default(now())
+
+  @@index([siteId, timestamp], map: "idx_aqi_site_time")
+}
+
+model SoilStat {
+  id               String   @id @default(cuid())
+  siteId           String
+  site             Site     @relation(fields: [siteId], references: [id])
+  collectedAt      DateTime @default(now())
+  mean_soil_ph     Float?
+  mean_clay_percent Float?
+  mean_sand_percent Float?
+}
+
+model ClimateStat {
+  id        String   @id @default(cuid())
+  siteId    String
+  site      Site     @relation(fields: [siteId], references: [id])
+  collectedAt DateTime @default(now())
+
+  year                        Int?
+  annual_avg_temperature_celsius Float?
+  annual_max_temperature_celsius Float?
+  annual_min_temperature_celsius Float?
+  annual_precipitation_mm        Float?
+  daily_avg_precipitation_mm     Float?
+}
+
+model Prediction {
+  id          String   @id @default(cuid())
+  siteId      String
+  site        Site     @relation(fields: [siteId], references: [id])
+  generatedAt DateTime @default(now())
+  forDate     DateTime
+  metric      String   // e.g., "ndvi", "aqi"
+  value       Float
+}
+
+model Alert {
+  id          String   @id @default(cuid())
+  siteId      String
+  site        Site     @relation(fields: [siteId], references: [id])
+  createdAt   DateTime @default(now())
+  type        String
+  message     String
+  sent        Boolean  @default(false)
+  phoneNumber String?
+  channel     String?  // e.g., "sms"
+}
+
+
+
