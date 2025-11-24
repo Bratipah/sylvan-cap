@@ -2,9 +2,13 @@ import { notFound } from "next/navigation"
 import { getSite } from "@/lib/sites"
 import { Card } from "@/components/ui/card"
 import MonitorCharts from "./charts"
+import { headers } from "next/headers"
 
 async function getData(siteId: string) {
-  const base = process.env.NEXT_PUBLIC_BASE_URL ?? ""
+  const h = headers()
+  const proto = h.get("x-forwarded-proto") || "http"
+  const host = h.get("x-forwarded-host") || h.get("host") || "localhost:3000"
+  const base = process.env.NEXT_PUBLIC_BASE_URL || `${proto}://${host}`
   const [indicesRes, soilRes, climateRes] = await Promise.all([
     fetch(`${base}/api/monitor/indices?siteId=${siteId}`, { cache: "no-store" }),
     fetch(`${base}/api/monitor/soil?siteId=${siteId}`, { cache: "no-store" }),
